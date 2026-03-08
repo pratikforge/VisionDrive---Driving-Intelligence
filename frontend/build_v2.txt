@@ -1,0 +1,20 @@
+﻿
+> frontend@0.1.0 build
+> craco build
+
+Creating an optimized production build...
+Failed to compile.
+
+Error: [BABEL] C:\Users\Pratik\Desktop\New folder\myproject\frontend\src\index.js: React Refresh Babel transform should only be enabled in development environment. Instead, the environment is: "production". If you want to override this check, pass {skipEnvCheck: true} as plugin options. (While processing: "C:\\Users\\Pratik\\Desktop\\New folder\\myproject\\frontend\\node_modules\\react-refresh\\babel.js")
+    at Generator.next (<anonymous>)
+    at Generator.next (<anonymous>)
+    at Generator.next (<anonymous>)
+    at Generator.next (<anonymous>)
+    at cachedFunction.next (<anonymous>)
+    at loadPluginDescriptor.next (<anonymous>)
+    at loadPluginDescriptors.next (<anonymous>)
+    at Generator.next (<anonymous>)
+    at loadFullConfig.next (<anonymous>)
+    at transform.next (<anonymous>)
+
+

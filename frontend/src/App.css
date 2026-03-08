@@ -1,0 +1,518 @@
+/* ================================================
+   VISIONDRIVE — ANIMATIONS & DESIGN SYSTEM
+   ================================================ */
+
+/* ─── Gradient Background (animated aurora) ─── */
+.gradient-bg {
+  background: #050505;
+  min-height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+
+
+/* ─── Glass Morphism ─── */
+.glass-card {
+  background: rgba(10, 10, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(155, 61, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Glowing Neon Buttons ─── */
+.btn-gradient-orange {
+  background: linear-gradient(90deg, #ff4d00 0%, #ff8c00 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 77, 0, 0.7);
+}
+
+.btn-gradient-purple {
+  background: linear-gradient(90deg, #6b21a8 0%, #9333ea 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(147, 51, 234, 0.6);
+}
+
+/* ─── SCROLL-REVEAL ANIMATIONS ─── */
+
+/* Base: invisible, ready to animate */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Directional variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── FLOAT ANIMATION (for hero image, icons) ─── */
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ─── FLOATING PARTICLES ─── */
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: particleDrift linear infinite;
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(60px, -120px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Background gradient orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: orbFloat ease-in-out infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(120, 30, 255, 0.25) 0%, transparent 60%);
+  top: -10%;
+  left: -10%;
+  animation-duration: 25s;
+}
+
+.orb-2 {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(0, 190, 255, 0.2) 0%, transparent 60%);
+  top: 40%;
+  right: -5%;
+  animation-duration: 28s;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(255, 60, 0, 0.15) 0%, transparent 60%);
+  bottom: -20%;
+  left: 20%;
+  animation-duration: 35s;
+  animation-delay: -10s;
+}
+
+.orb-4 {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(255, 0, 128, 0.15) 0%, transparent 60%);
+  top: 10%;
+  right: 20%;
+  animation-duration: 30s;
+  animation-delay: -15s;
+}
+
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+
+  50% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+
+  75% {
+    transform: translate(15px, 25px) scale(1.02);
+  }
+}
+
+/* ─── PULSING LIVE DOT ─── */
+.live-dot {
+  position: relative;
+}
+
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(74, 222, 128, 0.4);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ─── GRADIENT TEXT SHIMMER ─── */
+.shimmer-text {
+  background: linear-gradient(90deg,
+      #1a1a2e 0%,
+      #FF5A3C 40%,
+      #9B3DFF 60%,
+      #1a1a2e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ─── CARD TILT / GLOW ON HOVER ─── */
+.card-glow:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 12px 40px rgba(31, 38, 135, 0.4),
+    inset 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* ─── TYPEWRITER CURSOR ─── */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #FF5A3C;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── COUNTER NUMBER ANIMATION ─── */
+.counter-value {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.counter-value:hover {
+  transform: scale(1.15);
+}
+
+/* ─── STAGGER CHILDREN (utility) ─── */
+.stagger-children>* {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-children.visible>*:nth-child(1) {
+  transition-delay: 0.05s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible>*:nth-child(2) {
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible>*:nth-child(3) {
+  transition-delay: 0.15s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible>*:nth-child(4) {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible>*:nth-child(5) {
+  transition-delay: 0.25s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible>*:nth-child(6) {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── PAGE-LOAD FADE-IN (kept for compatibility) ─── */
+.fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── MODAL ─── */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 61, 255, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 61, 255, 0.8);
+}
+
+/* ─── BACKGROUND PATTERN ANIMATIONS ─── */
+
+/* Circuit-trace dash animation */
+.circuit-trace {
+  stroke-dasharray: 12 8;
+  animation: traceDash 20s linear infinite;
+}
+
+.circuit-trace-1 {
+  animation-delay: 0s;
+}
+
+.circuit-trace-2 {
+  animation-delay: 3s;
+}
+
+.circuit-trace-3 {
+  animation-delay: 6s;
+}
+
+.circuit-trace-4 {
+  animation-delay: 1.5s;
+}
+
+.circuit-trace-5 {
+  animation-delay: 4.5s;
+}
+
+@keyframes traceDash {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+/* Glowing node dots */
+.circuit-node {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+
+  0%,
+  100% {
+    r: 3;
+    opacity: 0.12;
+  }
+
+  50% {
+    r: 5;
+    opacity: 0.3;
+  }
+}
+
+/* Hexagonal grid slow rotation */
+.hex-rotate {
+  animation: hexSpin 120s linear infinite;
+}
+
+@keyframes hexSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Concentric ring pulse */
+.ring-pulse {
+  animation: ringPulse 8s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.04;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.07;
+  }
+}
+
+/* Floating decorations (plus signs, diamonds) */
+.float-decoration {
+  animation: floatDeco 7s ease-in-out infinite;
+}
+
+@keyframes floatDeco {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-10px) rotate(15deg);
+  }
+
+  66% {
+    transform: translateY(5px) rotate(-10deg);
+  }
+}
+
+/* ─── SMOOTH SCROLL ─── */
+html {
+  scroll-behavior: smooth;
+}
